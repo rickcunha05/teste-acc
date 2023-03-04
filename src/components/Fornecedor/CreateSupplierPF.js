@@ -1,7 +1,5 @@
 import React from "react";
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import { Row, Col, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -34,7 +32,7 @@ function CreateSupplierPF() {
             <Row>
                 <Form.Group as={Col} className="mb-3" controlId="formGridAddress1">
                     <Form.Label>CEP</Form.Label>
-                    <Form.Control placeholder="Digite seu CEP" pattern="" type="text" />
+                    <Form.Control placeholder="Digite seu CEP" type="text" />
                 </Form.Group>
                 <Form.Group as={Col} className="mb-3" controlId="formGridAddress1">
                     <Form.Label>Número</Form.Label>

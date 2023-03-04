@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
-import Table from 'react-bootstrap/Table'
-import Button from 'react-bootstrap/Button'
+import { Button, Table } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Companies from "../Empresa/Companies";
 
