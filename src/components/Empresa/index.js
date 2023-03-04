@@ -8,14 +8,29 @@ import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import InfoIcon from '@mui/icons-material/Info';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ButtonGroup } from "../Generic/styles";
+
 
 function Empresa() {
+
+    let history = useNavigate();
+    const handleDelete = (id) => {
+        var index = Companies.map(function (e) {
+            return e.id
+        }).indexOf(id);
+
+        Companies.splice(index, 1);
+
+        history('/empresa')
+    }
     return (
         <Fragment>
             <div style={{ margin: "10rem" }}>
-                <Link to="/fornecedor" style={{ textDecoration: "none" }}> <Button>Lista de Fornecedores </Button> </Link>
-                <Button> <AddIcon /> </Button>
+                <ButtonGroup >
+                    <Link to="/fornecedor" style={{ textDecoration: "none" }}> <Button>Lista de Fornecedores </Button> </Link>
+                    <Link to="/criarempresa" style={{ textDecoration: "none" }}>  <Button> <AddIcon />Criar uma Nova Empresa</Button> </Link>
+                </ButtonGroup>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -41,8 +56,8 @@ function Empresa() {
                                         </td>
                                         <td>
                                             <Button onClick={() => alert(item.id)}> <InfoIcon size="sm" /></Button>
-                                            <Button onClick={() => alert(item.id)}> <EditIcon size="sm" /></Button>
-                                            <Button onClick={() => alert(item.id)}> <DeleteIcon size="sm" /></Button>
+                                            <Link> <Button onClick={() => alert(item.id)}> <EditIcon size="sm" /></Button></Link>
+                                            <Button onClick={() => handleDelete(item.id)}> <DeleteIcon size="sm" /></Button>
 
 
                                         </td>

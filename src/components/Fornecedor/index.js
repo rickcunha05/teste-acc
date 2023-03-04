@@ -9,13 +9,16 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import InfoIcon from '@mui/icons-material/Info';
 import { Link } from "react-router-dom";
+import { ButtonGroup } from "../Generic/styles";
 
 function Fornecedor() {
     return (
         <Fragment>
             <div style={{ margin: "10rem" }}>
-                <Link to="/empresa" style={{ textDecoration: "none" }}> <Button>Lista de empresas </Button> </Link>
-                <Button><AddIcon /></Button>
+                <ButtonGroup>
+                    <Link to="/empresa" style={{ textDecoration: "none" }}> <Button>Lista de empresas </Button> </Link>
+                    <Link to="/createsupplier" style={{ textDecoration: "none" }}> <Button><AddIcon /> Criar um novo Fornecedor</Button> </Link>
+                </ButtonGroup>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
